@@ -4,7 +4,7 @@ import IngredientList from './components/IngredientList/IngredientList';
 import BurgerStack from './components/BurgerStack/BurgerStack';
 
 const App = () => {
-const [stack, setStack] = useState();
+const [stack, setStack] = useState([]);
 
   const availableIngredients = [
     { name: 'Kaiser Bun', color: 'saddlebrown' },
@@ -36,8 +36,8 @@ const [stack, setStack] = useState();
     <main>
       <h1>Burger Stacker</h1>
       <section>
-        <IngredientList />  // add here! 
-        <BurgerStack />
+        <IngredientList ingredients={availableIngredients} addToBurger={addToBurger} />
+        <BurgerStack stack={stack} removeFromBurger={removeFromBurger} />
       </section>
     </main>
   );
